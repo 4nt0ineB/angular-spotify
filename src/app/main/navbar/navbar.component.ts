@@ -7,6 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  links = [
+    { path: 'profile', label: 'Home' },
+    { path: 'search', label: 'Search' },
+  ];
+
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   changeView(childroute: string) {

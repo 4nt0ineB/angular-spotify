@@ -1,18 +1,10 @@
-<div class="" id="navbar" style="background-color: grey; padding: 5%;">
-  <div><h2>Spotify</h2></div>
-  <div>
-    <button type="button" (click)="changeView('profile')">Home</button>
-  </div>
-  <div>
-    <button type="button" (click)="changeView('search')">Search</button>
-  </div>
-  <div>
-    <p>category</p>
-  </div>
-  <div>
-    <p>category</p>
-  </div>
-  <div>
-    <p>category</p>
+<div id="navbar">
+  <div><h2 style="color: green;">Spotify</h2></div>
+  <div
+    *ngFor="let link of links"
+    (click)="changeView(link.path)"
+    class="nav-link"
+  >
+    {{ link.label }}
   </div>
 </div>

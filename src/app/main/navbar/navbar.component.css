@@ -3,4 +3,18 @@
   top: 0;
   height: 100vh;
   box-sizing: border-box;
+  background-color: black;
+  padding: 5%;
+}
+
+.nav-link {
+  color: grey;
+  cursor: pointer;
+  transition: color 229ms ease-in-out;
+  margin-bottom: 1em;
+}
+
+.nav-link:hover {
+  color: white;
+  transition: color 229ms ease-in-out;
 }
