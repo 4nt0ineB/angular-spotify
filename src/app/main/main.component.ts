@@ -11,6 +11,6 @@ export class MainComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.snapshot.paramMap.get('username');
+    this.username = this.route.snapshot.paramMap.get('username');
   }
 }

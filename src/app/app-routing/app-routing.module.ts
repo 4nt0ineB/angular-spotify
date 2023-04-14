@@ -16,11 +16,11 @@ export const routes: Routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full',
       },
-      /*  {
+      {
         path: 'profile',
         component: UserComponent,
         outlet: 'dashboard',
-      }, */
+      },
     ],
   },
 ];
