@@ -12,13 +12,14 @@ export const routes: Routes = [
     component: MainComponent,
     children: [
       {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
         path: '',
         redirectTo: 'profile',
         pathMatch: 'full',
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent,
+        outlet: 'dashboard',
       },
     ],
   },

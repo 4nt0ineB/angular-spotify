@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './main/navbar/navbar.component';
 import { ProfileComponent } from './main/profile/profile.component';
+import { SessionService } from './session.service';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { ProfileComponent } from './main/profile/profile.component';
     NavbarComponent,
     ProfileComponent,
   ],
+  providers: [SessionService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

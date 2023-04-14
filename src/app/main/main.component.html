@@ -5,9 +5,8 @@
   <app-navbar></app-navbar>
   <div class="col s9">
     <!-- Teal page content  -->
-    <p>{{ username }}</p>
+    <p>{{ session.getUsername() }}</p>
     <br />
-    <app-profile></app-profile>
     <router-outlet></router-outlet>
   </div>
 </div>
