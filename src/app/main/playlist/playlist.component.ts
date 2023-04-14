@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Track } from '../../model/models';
+import { Playlist, Track } from '../../model/models';
 import { SessionService } from '../../session.service';
 
 @Component({
@@ -9,14 +9,18 @@ import { SessionService } from '../../session.service';
   styleUrls: ['./playlist.component.css'],
 })
 export class PlaylistComponent implements OnInit {
+  playlist: Playlist;
   tracks: Track[];
   constructor(private session: SessionService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.session
-      .getPlaylistTracks(this.route.snapshot.paramMap.get('id'))
-      .subscribe((res: Track[]) => {
-        this.tracks = res;
-      });
+    let playlistId = this.route.snapshot.paramMap.get('id');
+    this.session.getPlaylists().subscribe((res: Playlist[]) => {
+      this.playlist = res.filter((p) => p.id == playlistId).pop();
+    });
+
+    this.session.getPlaylistTracks(playlistId).subscribe((res: Track[]) => {
+      this.tracks = res;
+    });
   }
 }

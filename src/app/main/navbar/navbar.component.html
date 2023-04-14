@@ -22,7 +22,11 @@
   </div>
   <hr class="line-separation" />
   <div class="playlist-scroller" style="overflow: scroll; max-height: 50vh;">
-    <div *ngFor="let p of playlists" class="nav-link">
+    <div
+      *ngFor="let p of playlists"
+      class="nav-link"
+      (click)="showPlaylist(p.id)"
+    >
       {{ p.name }}
     </div>
   </div>

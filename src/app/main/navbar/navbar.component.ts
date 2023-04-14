@@ -26,6 +26,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([childroute], { relativeTo: this.route });
   }
 
+  showPlaylist(id: string) {
+    this.router.navigate(['playlist/' + id], { relativeTo: this.route });
+  }
+
   ngOnInit() {
     this.session.getPlaylists().subscribe((res: Playlist[]) => {
       this.playlists = res;
