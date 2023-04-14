@@ -9,7 +9,6 @@
       Spoutify
     </h4>
   </div>
-
   <div
     *ngFor="let link of links"
     (click)="changeView(link.path)"
@@ -18,12 +17,13 @@
     <i class="material-icons left-icon">{{ link.icon }}</i>
     {{ link.label }}
   </div>
-
-  <div *ngFor="let p of playlists" class="nav-link">
-    {{ p.name }}
-  </div>
-
   <div class="nav-link">
     <a routerLink="/" style="margin-left: 2em;">Log out</a>
+  </div>
+  <hr class="line-separation" />
+  <div class="playlist-scroller" style="overflow: scroll; max-height: 50vh;">
+    <div *ngFor="let p of playlists" class="nav-link">
+      {{ p.name }}
+    </div>
   </div>
 </div>

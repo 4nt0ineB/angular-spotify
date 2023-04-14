@@ -5,18 +5,19 @@
   box-sizing: border-box;
   background-color: black;
   padding: 1em;
+  overflow: hidden;
 }
 
 .nav-link {
   color: grey;
   cursor: pointer;
-  transition: color 229ms ease-in-out;
+  transition: color 200ms ease-in-out;
   margin: 2em 0 1em 0.5em;
 }
 
 .nav-link:hover {
   color: white;
-  transition: color 229ms ease-in-out;
+  transition: color 200ms ease-in-out;
 }
 
 .left-icon {
@@ -26,4 +27,14 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.playlist-scroller {
+  font-size: small;
+}
+
+.line-separation {
+  border: 0;
+  height: 1px;
+  background: #333;
 }
