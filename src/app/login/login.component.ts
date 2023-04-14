@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,14 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   username: string;
-  constructor() {}
-
-  @Output()
-  usernameEmitter = new EventEmitter<string>();
+  constructor(private router: Router) {}
 
   submit(form: NgForm): void {
     if (!form.valid) {
       return;
     }
-    this.usernameEmitter.emit(this.username);
+    //this.router.navigate(['/']);
+    console.log('go');
     form.reset();
   }
 
