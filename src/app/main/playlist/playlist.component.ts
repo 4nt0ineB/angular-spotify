@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Playlist, Track } from '../../model/models';
 import { SessionService } from '../../session.service';
 
@@ -11,7 +11,17 @@ import { SessionService } from '../../session.service';
 export class PlaylistComponent implements OnInit {
   playlist: Playlist;
   tracks: Track[];
-  constructor(public session: SessionService, private route: ActivatedRoute) {}
+  constructor(
+    public session: SessionService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  deletePlaylist(): void {
+    this.session.deletePlaylist(this.playlist.id).subscribe((res: Boolean) => {
+      // this.router.navigate(['profile'], { relativeTo: this.route.parent });
+    });
+  }
 
   ngOnInit() {
     let playlistId = this.route.snapshot.paramMap.get('id');
@@ -23,7 +33,6 @@ export class PlaylistComponent implements OnInit {
 
       this.session.getPlaylistTracks(param['id']).subscribe((res: Track[]) => {
         this.tracks = res;
-        console.log(this.tracks);
       });
     });
   }

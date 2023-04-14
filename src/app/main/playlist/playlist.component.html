@@ -1,7 +1,12 @@
 <div id="playlist-section">
-  <h3>{{ playlist.name }}</h3>
+  <h3 style="max-width: 80%;">
+    {{ playlist?.name }}
+    <div class="right pointer" (click)="deletePlaylist()">
+      <i class="material-icons">delete</i>
+    </div>
+  </h3>
   <div style="color: grey;">
-    <p>{{ playlist.creationDate | date }}</p>
+    <p>{{ playlist?.creationDate | date }}</p>
   </div>
 
   <div id="track-list">

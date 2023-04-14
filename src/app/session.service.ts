@@ -30,6 +30,15 @@ export class SessionService {
     return this.username;
   }
 
+  deletePlaylist(id: string): Observable<boolean> {
+    return this.http
+      .delete(`${this.userAPIUrl}playlist/${id}`, {})
+      .pipe((res: any) => {
+        console.log(id);
+        return of(true);
+      });
+  }
+
   getPlaylists(): Observable<Playlist[]> {
     return this.http
       .get(`${this.userAPIUrl}playlist`)
