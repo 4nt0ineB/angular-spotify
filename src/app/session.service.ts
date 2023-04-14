@@ -39,6 +39,11 @@ export class SessionService {
   getPlaylistTracks(id: string): Observable<Track[]> {
     return this.http
       .get(`${this.userAPIUrl}playlist/${id}`)
-      .pipe(map((res: any) => res.Track));
+      .pipe(map((res: any) => res.tracks));
+  }
+
+  getRandomColor() {
+    var color = Math.floor(0x1000000 * Math.random()).toString(16);
+    return '#' + ('000000' + color).slice(-6);
   }
 }

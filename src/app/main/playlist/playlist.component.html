@@ -1,3 +1,21 @@
-<div class="playlist-section">
-  <p>{{ playlist.name }}</p>
+<div id="playlist-section">
+  <h3>{{ playlist.name }}</h3>
+  <div style="color: grey;">
+    <p>{{ playlist.creationDate | date }}</p>
+  </div>
+
+  <div id="track-list">
+    <div class="track-item" *ngFor="let t of tracks" style="max-width: 80%;">
+      <div
+        class="col s2"
+        style="width: 40px;height: 40px; margin-right: 1em;"
+        [ngStyle]="{ background: session.getRandomColor() }"
+      ></div>
+
+      <div>
+        {{ t.name }}
+      </div>
+      <div></div>
+    </div>
+  </div>
 </div>

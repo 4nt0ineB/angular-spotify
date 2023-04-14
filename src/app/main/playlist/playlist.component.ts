@@ -11,7 +11,7 @@ import { SessionService } from '../../session.service';
 export class PlaylistComponent implements OnInit {
   playlist: Playlist;
   tracks: Track[];
-  constructor(private session: SessionService, private route: ActivatedRoute) {}
+  constructor(public session: SessionService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     let playlistId = this.route.snapshot.paramMap.get('id');
@@ -21,6 +21,7 @@ export class PlaylistComponent implements OnInit {
 
     this.session.getPlaylistTracks(playlistId).subscribe((res: Track[]) => {
       this.tracks = res;
+      console.log(this.tracks);
     });
   }
 }

@@ -9,3 +9,27 @@
   font-family: 'Alexandria', sans-serif;
   overflow: scroll;
 }
+
+#track-list > .collection .collection-item {
+  background-color: transparent !important;
+}
+
+#track-list > .collection {
+  border: none;
+}
+
+#track-list {
+  max-width: 60vw;
+}
+
+.track-item {
+  display: grid;
+  min-width: 100%;
+  grid-template-columns:
+    70px
+    minmax(150px, 2fr)
+    20%;
+}
+.pointer {
+  cursor: pointer;
+}
