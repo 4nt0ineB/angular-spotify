@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@500&display=swap');
+
 #navbar {
   position: sticky;
   top: 0;
@@ -17,4 +19,8 @@
 .nav-link:hover {
   color: white;
   transition: color 229ms ease-in-out;
+}
+
+.left-icon {
+  vertical-align: top;
 }

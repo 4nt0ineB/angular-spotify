@@ -8,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   links = [
-    { path: 'profile', label: 'Home' },
-    { path: 'search', label: 'Search' },
+    { path: 'profile', label: 'Home', icon: 'home' },
+    { path: 'search', label: 'Search', icon: 'search' },
   ];
 
   constructor(private route: ActivatedRoute, private router: Router) {}

@@ -1,15 +1,21 @@
 <div id="navbar">
   <div>
-    <h2 style="color: green;">
+    <h4 style="color: white; font-family: 'Alexandria', sans-serif;">
       <!-- <a href="https://www.flaticon.com/free-icons/music-app" title="music app icons">Music app icons created by muhrzkifauzi - Flaticon</a> -->
-      <img src="assets/img/music.png" /> Spotify
-    </h2>
+      <img
+        src="https://i.ibb.co/X4HMSVx/music.png"
+        style="height: 1em; vertical-align: top;"
+      />
+      Spoutify
+    </h4>
   </div>
+
   <div
     *ngFor="let link of links"
     (click)="changeView(link.path)"
     class="nav-link"
   >
+    <i class="material-icons left-icon">{{ link.icon }}</i>
     {{ link.label }}
   </div>
 </div>
