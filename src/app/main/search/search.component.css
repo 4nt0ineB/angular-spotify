@@ -1,0 +1,10 @@
+#search-section {
+  top: 0;
+  min-width: 430px;
+  background-color: #121212;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 1em 1em 1em 3em;
+  color: white;
+  font-family: 'Alexandria', sans-serif;
+}
