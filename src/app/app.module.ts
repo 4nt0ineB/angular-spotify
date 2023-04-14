@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
+import { NavbarComponent } from './main/navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { MainComponent } from './main/main.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  declarations: [LoginComponent, AppComponent, MainComponent],
+  declarations: [LoginComponent, AppComponent, MainComponent, NavbarComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -15,8 +15,7 @@ export class LoginComponent implements OnInit {
     if (!form.valid) {
       return;
     }
-    //this.router.navigate(['/']);
-    console.log('go');
+    this.router.navigate(['user/' + this.username]);
     form.reset();
   }
 
