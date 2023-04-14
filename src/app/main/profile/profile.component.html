@@ -4,7 +4,7 @@
   </div>
 
   <div id="playlist-gallery">
-    <div *ngFor="let p of playlists" class="pitem">
+    <div *ngFor="let p of playlists" class="pitem" (click)="goToPlaylist(p.id)">
       <div
         style="width: 90px;height: 90px; margin: auto;"
         [ngStyle]="{ background: getRandomColor() }"

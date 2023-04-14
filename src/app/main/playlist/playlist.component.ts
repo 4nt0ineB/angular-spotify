@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Track } from '../../model/models';
 import { SessionService } from '../../session.service';
 
 @Component({
@@ -7,7 +9,14 @@ import { SessionService } from '../../session.service';
   styleUrls: ['./playlist.component.css'],
 })
 export class PlaylistComponent implements OnInit {
-  constructor(private session: SessionService) {}
+  tracks: Track[];
+  constructor(private session: SessionService, private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.session
+      .getPlaylistTracks(this.route.snapshot.paramMap.get('id'))
+      .subscribe((res: Track[]) => {
+        this.tracks = res;
+      });
+  }
 }

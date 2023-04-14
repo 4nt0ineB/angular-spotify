@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Playlist } from '../../model/models';
 import { SessionService } from '../../session.service';
 
@@ -9,11 +10,19 @@ import { SessionService } from '../../session.service';
 })
 export class ProfileComponent implements OnInit {
   playlists: Playlist[];
-  constructor(public session: SessionService) {}
+  constructor(
+    public session: SessionService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   getRandomColor() {
     var color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + color).slice(-6);
+  }
+
+  goToPlaylist(id: string): void {
+    this.router.navigate(['playlist/' + id], { relativeTo: this.route.parent });
   }
 
   ngOnInit() {

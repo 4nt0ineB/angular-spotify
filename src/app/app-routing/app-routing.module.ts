@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { MainComponent } from '../main/main.component';
 import { ProfileComponent } from '../main/profile/profile.component';
 import { SearchComponent } from '../main/search/search.component';
+import { PlaylistComponent } from '../main/playlist/playlist.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -16,7 +17,10 @@ export const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
       },
-
+      {
+        path: 'playlist/:id',
+        component: PlaylistComponent,
+      },
       {
         path: 'search',
         component: SearchComponent,

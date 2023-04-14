@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, from, of, map } from 'rxjs';
-import { Playlist, PlaylistResponse } from './model/models';
+import {
+  Playlist,
+  PlaylistResponse,
+  Track,
+  TrackResponse,
+} from './model/models';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +32,13 @@ export class SessionService {
 
   getPlaylists(): Observable<Playlist[]> {
     return this.http
-      .get(this.userAPIUrl + 'playlist')
+      .get(`${this.userAPIUrl}playlist`)
       .pipe(map((res: any) => res.playlists));
+  }
+
+  getPlaylistTracks(id: string): Observable<Track[]> {
+    return this.http
+      .get(`${this.userAPIUrl}playlist/${id}`)
+      .pipe(map((res: any) => res.Track));
   }
 }
