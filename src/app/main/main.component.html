@@ -1,12 +1,14 @@
 <!-- Navbar goes here -->
 
 <!-- Page Layout here -->
-<div class="row" style="height: 100vh;">
-  <app-navbar></app-navbar>
-  <div class="col s9">
-    <!-- Teal page content  -->
-    <p>{{ session.getUsername() }}</p>
-    <br />
+<div class="main-container">
+  <div class="section">
+    <app-navbar></app-navbar>
+  </div>
+
+  <!-- Teal page content  -->
+
+  <div class="section">
     <router-outlet></router-outlet>
   </div>
 </div>

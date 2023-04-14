@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './main/navbar/navbar.component';
 import { ProfileComponent } from './main/profile/profile.component';
 import { SessionService } from './session.service';
+import { SearchComponent } from './main/search/search.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { SessionService } from './session.service';
     MainComponent,
     NavbarComponent,
     ProfileComponent,
+    SearchComponent,
   ],
   providers: [SessionService],
   bootstrap: [AppComponent],

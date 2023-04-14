@@ -7,10 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
-  changeView() {
-    //this.router.navigate(['coins'], { relativeTo: this.route });
+  changeView(childroute: string) {
+    this.router.navigate([childroute], { relativeTo: this.route });
   }
 
   ngOnInit() {}

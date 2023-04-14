@@ -1,0 +1,7 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 236px auto;
+}
+.section {
+  padding: 0;
+}
