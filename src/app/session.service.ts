@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, from, of, map } from 'rxjs';
 import { Playlist, PlaylistResponse } from './model/models';
 
 @Injectable({
@@ -28,6 +28,6 @@ export class SessionService {
   getPlaylists(): Observable<Playlist[]> {
     return this.http
       .get(this.userAPIUrl + 'playlist')
-      .pipe((res: any) => res.playlists);
+      .pipe(map((res: any) => res.playlists));
   }
 }
