@@ -4,9 +4,16 @@ import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule, CommonModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
   declarations: [LoginComponent, AppComponent],
   bootstrap: [AppComponent],
 })
