@@ -1,44 +1,46 @@
-<div class="container">
-  <div class="row">
-    <div class="col s6">
-      <h3>Spotify</h3>
-    </div>
-    <div class="col s6">
-      <form
-        #f="ngForm"
-        class=""
-        (ngSubmit)="submit(f)"
-        (keydown.enter)="submit(f)"
-      >
-        <div class="row">
-          <div class="input-field">
-            <i class="material-icons prefix">account_circle</i>
-            <input
-              #funame="ngModel"
-              id="icon_prefix"
-              [(ngModel)]="username"
-              type="text"
-              class="validate"
-              name="username"
-              maxlength="25"
-              minlength="4"
-              [ngClass]="{ invalid: funame.dirty && funame.invalid }"
-            />
-            <label for="icon_prefix">Username</label>
-          </div>
-          <div *ngIf="funame.dirty && funame.invalid"></div>
-        </div>
-        <button
-          class="btn waves-effect waves-light"
-          type="submit"
-          name="action"
-          style="float: right;"
-          [disabled]="f.invalid"
+<div style="background-color: black; padding-top: 20em;">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col" style="min-width: 236px;">
+        <h3 style="font-family: 'Alexandria', sans-serif;">Spoutify</h3>
+      </div>
+      <div class="col push-s2 s6" style="padding-top: 1em;">
+        <form
+          #f="ngForm"
+          class=""
+          (ngSubmit)="submit(f)"
+          (keydown.enter)="submit(f)"
         >
-          Log in
-          <i class="material-icons right">send</i>
-        </button>
-      </form>
+          <div class="row">
+            <div class="input-field">
+              <i class="material-icons prefix">account_circle</i>
+              <input
+                style="color: white;"
+                #funame="ngModel"
+                id="icon_prefix"
+                [(ngModel)]="username"
+                type="text"
+                class="validate"
+                name="username"
+                minlength="4"
+                [ngClass]="{ invalid: funame.dirty && funame.invalid }"
+              />
+              <label for="icon_prefix">Username</label>
+            </div>
+            <div *ngIf="funame.dirty && funame.invalid"></div>
+          </div>
+          <button
+            class="btn waves-effect waves-light green"
+            type="submit"
+            name="action"
+            style="float: right;"
+            [disabled]="f.invalid"
+          >
+            Log in
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

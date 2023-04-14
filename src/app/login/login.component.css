@@ -1,3 +1,22 @@
 red {
   color: red;
 }
+
+.login-container {
+  color: white;
+  background-color: black;
+  height: 100vh;
+}
+
+/* label focus color */
+.input-field input[type='text']:focus + label {
+  color: #4caf50 !important;
+}
+/* label underline focus color */
+.input-field input[type='text']:focus {
+  border-bottom: 1px solid #4caf50;
+  box-shadow: 0 1px 0 0 #4caf50;
+}
+.input-field .prefix.active {
+  color: #4caf50 !important;
+}
