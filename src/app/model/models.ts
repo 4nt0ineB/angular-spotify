@@ -48,6 +48,7 @@ interface ArtistResponse {
 export {
   Album,
   AlbumResponse,
+  PlaylistResponse,
   Playlist,
   PlaylistCreation,
   AddSongToPlaylist,

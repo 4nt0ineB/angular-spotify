@@ -11,7 +11,7 @@
   color: grey;
   cursor: pointer;
   transition: color 229ms ease-in-out;
-  margin: 2em 0 1em 0;
+  margin: 2em 0 1em 0.5em;
 }
 
 .nav-link:hover {

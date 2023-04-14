@@ -1,18 +1,33 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Playlist, PlaylistResponse } from './model/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SessionService {
-  private username: string;
+  static baseAPIUrl: string =
+    'https://europe-west1-cours-angular-263913.cloudfunctions.net/apiSpotify/api/';
+  static openAPIUrl: string = SessionService.baseAPIUrl + 'data/';
 
-  constructor() {}
+  private username: string;
+  private userAPIUrl: string;
+
+  constructor(private http: HttpClient) {}
 
   setUsername(username: string): void {
     this.username = username;
+    this.userAPIUrl = SessionService.baseAPIUrl + 'user/' + this.username;
   }
 
   getUsername(): string {
     return this.username;
+  }
+
+  getPlaylists(): Observable<Playlist[]> {
+    return this.http
+      .get(this.userAPIUrl + 'playlist')
+      .pipe((res: any) => res.playlists);
   }
 }
