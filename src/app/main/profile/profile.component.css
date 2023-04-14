@@ -19,3 +19,16 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+#playlist-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pitem {
+  width: calc((100% / 4) - 20px);
+  height: 100px;
+  background-color: #181818;
+  margin: 1em;
+}

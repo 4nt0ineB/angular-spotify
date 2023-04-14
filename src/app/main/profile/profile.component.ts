@@ -8,11 +8,12 @@ import { SessionService } from '../../session.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  playlists: Playlist[];
   constructor(public session: SessionService) {}
 
   ngOnInit() {
     this.session.getPlaylists().subscribe((res: Playlist[]) => {
-      console.log(res);
+      this.playlists = res;
     });
   }
 }
