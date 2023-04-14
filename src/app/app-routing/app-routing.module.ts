@@ -13,13 +13,12 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'profile',
         pathMatch: 'full',
       },
       {
         path: 'profile',
         component: UserComponent,
-        outlet: 'dashboard',
       },
     ],
   },

@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './main/navbar/navbar.component';
+import { ProfileComponent } from './main/profile/profile.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,13 @@ import { NavbarComponent } from './main/navbar/navbar.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  declarations: [LoginComponent, AppComponent, MainComponent, NavbarComponent],
+  declarations: [
+    LoginComponent,
+    AppComponent,
+    MainComponent,
+    NavbarComponent,
+    ProfileComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
