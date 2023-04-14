@@ -10,7 +10,7 @@ import { NavbarComponent } from './main/navbar/navbar.component';
 import { ProfileComponent } from './main/profile/profile.component';
 import { SessionService } from './session.service';
 import { SearchComponent } from './main/search/search.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -19,6 +19,7 @@ import { HttpClient } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
   ],
   declarations: [
     LoginComponent,
