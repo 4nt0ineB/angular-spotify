@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, from, of, map } from 'rxjs';
 import {
@@ -30,13 +30,10 @@ export class SessionService {
     return this.username;
   }
 
-  deletePlaylist(id: string): Observable<boolean> {
-    return this.http
-      .delete(`${this.userAPIUrl}playlist/${id}`, {})
-      .pipe((res: any) => {
-        console.log(id);
-        return of(true);
-      });
+  deletePlaylist(id: string): void {
+    console.log(this.userAPIUrl + 'playlist/' + id);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    this.http.delete(this.userAPIUrl + 'playlist/' + id, { headers: headers });
   }
 
   getPlaylists(): Observable<Playlist[]> {
@@ -53,6 +50,7 @@ export class SessionService {
 
   getRandomColor() {
     var color = Math.floor(0x1000000 * Math.random()).toString(16);
-    return '#' + ('000000' + color).slice(-6);
+    //return '#' + ('000000' + color).slice(-6);
+    return '#ffffff';
   }
 }

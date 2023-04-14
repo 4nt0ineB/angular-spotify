@@ -18,9 +18,7 @@ export class PlaylistComponent implements OnInit {
   ) {}
 
   deletePlaylist(): void {
-    this.session.deletePlaylist(this.playlist.id).subscribe((res: Boolean) => {
-      // this.router.navigate(['profile'], { relativeTo: this.route.parent });
-    });
+    this.session.deletePlaylist(this.playlist.id);
   }
 
   ngOnInit() {

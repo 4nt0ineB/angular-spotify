@@ -31,8 +31,10 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.session.getPlaylists().subscribe((res: Playlist[]) => {
-      this.playlists = res;
+    this.route.params.subscribe((param) => {
+      this.session.getPlaylists().subscribe((res: Playlist[]) => {
+        this.playlists = res;
+      });
     });
   }
 }
