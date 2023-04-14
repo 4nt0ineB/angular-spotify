@@ -19,6 +19,10 @@
     {{ link.label }}
   </div>
 
+  <div *ngFor="let p of playlists" class="nav-link">
+    {{ p.name }}
+  </div>
+
   <div class="nav-link">
     <a routerLink="/" style="margin-left: 2em;">Log out</a>
   </div>
