@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Playlist } from '../../model/models';
 import { SessionService } from '../../session.service';
 
 @Component({
@@ -9,5 +10,9 @@ import { SessionService } from '../../session.service';
 export class ProfileComponent implements OnInit {
   constructor(public session: SessionService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.session.getPlaylists().subscribe((res: Playlist[]) => {
+      console.log(res);
+    });
+  }
 }

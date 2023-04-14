@@ -18,7 +18,7 @@ export class SessionService {
 
   setUsername(username: string): void {
     this.username = username;
-    this.userAPIUrl = SessionService.baseAPIUrl + 'user/' + this.username;
+    this.userAPIUrl = SessionService.baseAPIUrl + 'user/' + this.username + '/';
   }
 
   getUsername(): string {
