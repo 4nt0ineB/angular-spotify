@@ -33,7 +33,9 @@ export class SessionService {
   deletePlaylist(id: string): void {
     console.log(this.userAPIUrl + 'playlist/' + id);
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    this.http.delete(this.userAPIUrl + 'playlist/' + id, { headers: headers });
+    this.http
+      .delete(this.userAPIUrl + 'playlist/' + id, { headers: headers })
+      .subscribe((res: any) => console.log(id));
   }
 
   getPlaylists(): Observable<Playlist[]> {
