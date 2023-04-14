@@ -11,6 +11,7 @@ import { ProfileComponent } from './main/profile/profile.component';
 import { SessionService } from './session.service';
 import { SearchComponent } from './main/search/search.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PlaylistComponent } from './main/playlist/playlist.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     ProfileComponent,
     SearchComponent,
+    PlaylistComponent,
   ],
   providers: [SessionService],
   bootstrap: [AppComponent],
