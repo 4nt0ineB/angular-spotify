@@ -15,13 +15,16 @@ export class PlaylistComponent implements OnInit {
 
   ngOnInit() {
     let playlistId = this.route.snapshot.paramMap.get('id');
-    this.session.getPlaylists().subscribe((res: Playlist[]) => {
-      this.playlist = res.filter((p) => p.id == playlistId).pop();
-    });
 
-    this.session.getPlaylistTracks(playlistId).subscribe((res: Track[]) => {
-      this.tracks = res;
-      console.log(this.tracks);
+    this.route.params.subscribe((param) => {
+      this.session.getPlaylists().subscribe((res: Playlist[]) => {
+        this.playlist = res.filter((p) => p.id == param['id']).pop();
+      });
+
+      this.session.getPlaylistTracks(param['id']).subscribe((res: Track[]) => {
+        this.tracks = res;
+        console.log(this.tracks);
+      });
     });
   }
 }
