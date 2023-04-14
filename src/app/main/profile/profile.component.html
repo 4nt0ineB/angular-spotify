@@ -5,8 +5,13 @@
 
   <div id="playlist-gallery">
     <div *ngFor="let p of playlists" class="pitem">
-      <p>
-        {{ p.name }}
+      <div
+        style="width: 90px;height: 90px; margin: auto;"
+        [ngStyle]="{ background: getRandomColor() }"
+      ></div>
+      <br />
+      <p style="font-size: small;">
+        {{ p.name.length > 13 ? (p.name | slice: 0:13) + '...' : p.name }}
       </p>
       <p style="color: grey; font-size: x-small;">
         by {{ session.getUsername() }}
