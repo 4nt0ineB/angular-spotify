@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { MainComponent } from '../main/main.component';
-import { UserComponent } from '../main/user/user.component';
+import { ProfileComponent } from '../main/profile/profile.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,7 +18,7 @@ export const routes: Routes = [
       },
       {
         path: 'profile',
-        component: UserComponent,
+        component: ProfileComponent,
       },
     ],
   },
