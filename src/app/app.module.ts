@@ -12,6 +12,7 @@ import { SessionService } from './session.service';
 import { SearchComponent } from './main/search/search.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PlaylistComponent } from './main/playlist/playlist.component';
+import { PlaylistFormComponent } from './main/navbar/playlist-form/playlist-form.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { PlaylistComponent } from './main/playlist/playlist.component';
     ProfileComponent,
     SearchComponent,
     PlaylistComponent,
+    PlaylistFormComponent,
   ],
   providers: [SessionService],
   bootstrap: [AppComponent],

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, from, of, map } from 'rxjs';
 import {
   Playlist,
+  PlaylistCreation,
   PlaylistResponse,
   Track,
   TrackResponse,
@@ -48,6 +49,12 @@ export class SessionService {
     return this.http
       .get(`${this.userAPIUrl}playlist/${id}`)
       .pipe(map((res: any) => res.tracks));
+  }
+
+  addPlaylist(name: string): Observable<Playlist> {
+    let pllst: PlaylistCreation;
+    pllst.name = name;
+    return this.http.post<Playlist>(this.userAPIUrl + 'playlist/', pllst);
   }
 
   getRandomColor() {

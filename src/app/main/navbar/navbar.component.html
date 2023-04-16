@@ -17,6 +17,15 @@
     <i class="material-icons left-icon">{{ link.icon }}</i>
     {{ link.label }}
   </div>
+  <!--  -->
+  <div
+    class="nav-link"
+    (click)="addPlayList($event.target)"
+    data-target="modal1"
+  >
+    <i class="material-icons left-icon"> library_add </i>
+    Create Playlist
+  </div>
   <div class="nav-link">
     <a routerLink="/" style="margin-left: 2em;">Log out</a>
   </div>
@@ -30,4 +39,12 @@
       {{ p.name }}
     </div>
   </div>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <app-playlist-form></app-playlist-form>
+  </div>
+  <div class="modal-footer"></div>
 </div>

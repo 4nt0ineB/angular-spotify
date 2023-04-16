@@ -1,3 +1,5 @@
+declare const M: any;
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Playlist } from '../../model/models';
@@ -12,7 +14,6 @@ export class NavbarComponent implements OnInit {
   links = [
     { path: 'profile', label: 'Home', icon: 'home' },
     { path: 'search', label: 'Search', icon: 'search' },
-    { path: 'search', label: 'Create Playlist', icon: 'library_add' },
   ];
   playlists: Playlist[];
 
@@ -28,6 +29,12 @@ export class NavbarComponent implements OnInit {
 
   showPlaylist(id: string) {
     this.router.navigate(['playlist/' + id], { relativeTo: this.route });
+  }
+
+  addPlayList(el: any): void {
+    var elems = document.querySelector('#' + el.getAttribute('data-target'));
+    var instance = M.Modal.init(elems);
+    instance.open();
   }
 
   ngOnInit() {
