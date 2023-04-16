@@ -19,12 +19,11 @@ export class PlaylistComponent implements OnInit {
 
   deletePlaylist(): void {
     this.session.deletePlaylist(this.playlist.id);
-    this.router.navigate([''], { relativeTo: this.route });
+    console.log(this.route.url);
+    this.router.navigate(['profile'], { relativeTo: this.route });
   }
 
   ngOnInit() {
-    let playlistId = this.route.snapshot.paramMap.get('id');
-
     this.route.params.subscribe((param) => {
       this.session.getPlaylists().subscribe((res: Playlist[]) => {
         this.playlist = res.filter((p) => p.id == param['id']).pop();

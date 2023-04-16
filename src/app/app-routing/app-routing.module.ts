@@ -30,15 +30,13 @@ export const routes: Routes = [
         redirectTo: 'profile',
         pathMatch: 'full',
       },
+      { path: '**', redirectTo: 'profile' },
     ],
   },
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' }),
-  ],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   declarations: [],
   exports: [RouterModule],
 })

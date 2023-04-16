@@ -1,8 +1,11 @@
-<div class="col push-s4 s4" style="padding-top: 1em;">
+<div
+  class="col push-s4 s4"
+  style="padding-top: 1em; background-color: #121212; padding: 2em;"
+  *ngIf="!this.submitted; else elseBlock"
+>
   <form #f="ngForm" class="" (ngSubmit)="submit(f)" (keydown.enter)="submit(f)">
     <div class="row">
       <div class="input-field">
-        <i class="material-icons prefix">account_circle</i>
         <input
           style="color: white;"
           #funame="ngModel"
@@ -14,7 +17,7 @@
           minlength="4"
           [ngClass]="{ invalid: funame.dirty && funame.invalid }"
         />
-        <label for="icon_prefix">Username</label>
+        <label for="icon_prefix">Title</label>
       </div>
       <div *ngIf="funame.dirty && funame.invalid"></div>
     </div>
@@ -25,8 +28,14 @@
       style="float: right;"
       [disabled]="f.invalid"
     >
-      Log in
-      <i class="material-icons right">send</i>
+      create
+      <i class="material-icons right">check</i>
     </button>
   </form>
 </div>
+
+<ng-template #elseBlock>
+  <div style="text-align: center;">
+    <p>The playlist {{ playlist.name }} have been added !</p>
+  </div>
+</ng-template>

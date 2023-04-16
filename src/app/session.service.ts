@@ -52,9 +52,9 @@ export class SessionService {
   }
 
   addPlaylist(name: string): Observable<Playlist> {
-    let pllst: PlaylistCreation;
-    pllst.name = name;
-    return this.http.post<Playlist>(this.userAPIUrl + 'playlist/', pllst);
+    return this.http.post<Playlist>(this.userAPIUrl + 'playlist/', {
+      name: name,
+    });
   }
 
   getRandomColor() {

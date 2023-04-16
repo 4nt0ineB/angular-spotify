@@ -41,10 +41,11 @@
   </div>
 </div>
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Modal Header</h4>
-    <app-playlist-form></app-playlist-form>
+<div id="modal1" class="modal" style="background-color: #121212; color: white;">
+  <div class="modal-content" style="max-width: 100%;">
+    <h4>New playlist</h4>
+    <app-playlist-form (submitedEmitter)="ngOnInit()"></app-playlist-form>
   </div>
-  <div class="modal-footer"></div>
+  <br />
+  <div class="modal-footer" style="background-color: inherit;"></div>
 </div>

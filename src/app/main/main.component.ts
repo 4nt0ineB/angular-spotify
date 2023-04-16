@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { SessionService } from '../session.service';
 
 @Component({
@@ -8,10 +9,17 @@ import { SessionService } from '../session.service';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  username: string;
-  constructor(private route: ActivatedRoute, public session: SessionService) {}
+  count: number;
+  constructor(
+    private route: ActivatedRoute,
+    public session: SessionService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.session.setUsername(this.route.snapshot.paramMap.get('username'));
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.route.params.subscribe((param) => {
+      this.session.setUsername(param['username']);
+    });
   }
 }

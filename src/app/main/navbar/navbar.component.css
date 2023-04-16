@@ -38,3 +38,8 @@ a {
   height: 1px;
   background: #333;
 }
+
+.modal {
+  background-color: #121212;
+  color: white;
+}
