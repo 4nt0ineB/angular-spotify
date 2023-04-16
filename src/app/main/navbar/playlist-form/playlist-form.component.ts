@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Playlist } from '../../../model/models';
 import { SessionService } from '../../../session.service';
 
 @Component({
@@ -16,7 +17,9 @@ export class PlaylistFormComponent implements OnInit {
     if (!f.valid) {
       return;
     }
-    this.session.addPlaylist(this.name).subscribe();
+    this.session.addPlaylist(this.name).subscribe((res: Playlist) => {
+      console.log(JSON.stringify(res));
+    });
     f.reset();
   }
 
