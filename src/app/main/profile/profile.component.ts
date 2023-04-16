@@ -14,7 +14,9 @@ export class ProfileComponent implements OnInit {
     public session: SessionService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   getRandomColor() {
     var color = Math.floor(0x1000000 * Math.random()).toString(16);

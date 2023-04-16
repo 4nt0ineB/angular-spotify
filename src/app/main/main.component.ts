@@ -14,10 +14,11 @@ export class MainComponent implements OnInit {
     private route: ActivatedRoute,
     public session: SessionService,
     private router: Router
-  ) {}
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit() {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.route.params.subscribe((param) => {
       this.session.setUsername(param['username']);
     });
